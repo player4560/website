@@ -1,0 +1,443 @@
+body {
+  font-family: "Roboto", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: hsl(0, 2%, 8%);
+  /* background-image: url(flaga5.avif); */ /* zdjecie jako tlo strony */
+  /* background-size: cover; */ /* Rozciąga obrazek na pełną szerokość i wysokość */
+  background-color: #c2cac9;
+  background-position: cover; /* Wyśrodkowuje obrazek na stronie */
+  background-attachment: fixed; /* Tło pozostaje nieruchome podczas przewijania */
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+
+header h1 {
+  font-size: 3em;
+  text-align: center;
+  margin: 0.5em 0;
+  color: #10b735; /* zielony kolor */
+  text-shadow: 2px 2px 5px #f7b731; /* Cień pomaranczowy */
+  font-family: "Arial", sans-serif;
+  overflow: hidden; /* Ukrywa tekst poza obszarem */
+  white-space: nowrap; /* Zapobiega łamaniu wierszy */
+  position: relative; /* Pozycjonowanie względem rodzica */
+  animation: slideBanner 10s linear infinite; /* Animacja banera */
+}
+
+section h2 {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+img {
+  width: 40px;
+  height: auto;
+}
+.lang-selector {
+  margin-bottom: 20px;
+}
+
+td {
+  padding: 10px;
+  border: none; /* Usuwa wszystkie krawędzie */
+}
+
+tr:not(:last-child) td {
+  border-bottom: 1px solid black; /* Dodaje dolną krawędź do każdego wiersza, oprócz ostatniego */
+}
+
+td:not(:last-child) {
+  border-right: none; /* usuwa pionowe linie między kolumnami */
+}
+
+.icon-text {
+  display: flex;
+  align-items: center; /* Wyrównuje ikonę i tekst w pionie */
+  gap: 10px; /* Dodaje odstęp między ikoną a tekstem */
+  justify-content: start; /* Wyrównuje treść do lewej */
+}
+
+.icon-text img {
+  width: 30px; /* Dostosuj rozmiar ikony */
+  height: auto;
+}
+
+/* Definicja animacji */
+@keyframes slideBanner {
+  0% {
+    transform: translateX(-100%); /* Start od lewej strony poza ekranem */
+  }
+  100% {
+    transform: translateX(100%); /* Kończy po prawej stronie poza ekranem */
+  }
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie w poziomie */
+  /* Obrazy obok siebie */
+  flex-wrap: wrap
+  width: 100%; /* Pełna szerokość */
+  height: 400px; /* Wysokość obrazów dostosowana do paska nawigacyjnego */
+  box-sizing: border-box;
+  overflow: hidden; /* Ukrywa nadmiar obrazu, jeśli nie mieści się w kontenerze */
+  background-color: #c2cac9;
+}
+
+.image-container img {
+  object-fit: contain; /* Każdy obraz zajmuje równą część dostępnej szerokości */
+  width: 100%; /* Gwarantuje pełną szerokość w swoim "boxie" */
+  height: auto; /* Zachowuje proporcje obrazów */ /* Zapewnia ładne dopasowanie obrazów */
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.image-container img:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .language-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .image-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  section {
+    padding: 1em;
+  }
+}
+
+nav {
+  position: relative;
+  width: 100%; /* Pasek nawigacyjny zajmuje pełną szerokość */
+  height: 50px; /* Wysokość paska */
+  background: rgba(0, 0, 0, 0); /* Kolor tła */
+  display: flex; /* Flexbox do wyrównania elementów */
+  justify-content: center; /* Wyśrodkowanie linków w poziomie */
+  align-items: center; /* Wyśrodkowanie linków w pionie */
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  nav a {
+    font-size: 1.5em;
+    padding: 10px 20px;
+  }
+}
+
+nav a {
+  display: inline-block;
+  font-size: 3em;
+  color: black; /* Kolor linków */
+  text-decoration: none;
+  padding: 20px 40px; /* Odstępy między linkami */
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+nav a.small-font {
+  font-size: 30px; /* Możesz dostosować tę wartość do swoich potrzeb */
+}
+
+nav a:hover {
+  color: #10b735; /* Kolor linku podczas najechania */
+}
+
+ /* nav span {
+  position: absolute;
+  top: 0;
+  left: 275px;
+  width: 260px;  Szerokość wskaźnika 
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    hsl(99, 55%, 49%),
+    hsl(71, 85%, 48%)
+  ); /* Gradient wskaźnika 
+  border-radius: 8px;
+  transition: 0.5s ease;
+  z-index: 0; 
+} 
+
+nav a:nth-child(1):hover ~ span {
+  left: 275px;
+}
+
+nav a:nth-child(2):hover ~ span {
+  left: 555px;
+}
+
+nav a:nth-child(3):hover ~ span {
+  left: 785px;
+}
+
+nav a:nth-child(4):hover ~ span {
+  left: 1030px;
+}
+
+/* Tylko dla języka angielskiego 
+body.lang-en nav span {
+  position: absolute;
+  top: 0;
+  left: 340px;
+  width: 230px; /* Szerokość wskaźnika 
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    hsl(99, 55%, 49%),
+    hsl(71, 85%, 48%)
+  ); /* Gradient wskaźnika 
+  border-radius: 8px;
+  transition: 0.5s ease;
+  z-index: 0;
+}
+
+body.lang-en nav a:nth-child(1):hover ~ span {
+  left: 340px;
+}
+
+body.lang-en nav a:nth-child(2):hover ~ span {
+  left: 530px;
+}
+body.lang-en nav a:nth-child(3):hover ~ span {
+  left: 745px;
+}
+
+body.lang-en nav a:nth-child(4):hover ~ span {
+  left: 970px;
+  /* Twoje style dla :hover w przypadku angielskiego */
+  color: blue; /* przykładowa zmiana koloru 
+  text-decoration: underline;
+}
+
+/* Tylko dla języka niemieckiego 
+body.lang-de nav span {
+  position: absolute;
+  top: 0;
+  left: 355px;
+  width: 230px; /* Szerokość wskaźnika 
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    hsl(99, 55%, 49%),
+    hsl(71, 85%, 48%)
+  ); /* Gradient wskaźnika 
+  border-radius: 8px;
+  transition: 0.5s ease;
+  z-index: 0;
+}
+
+body.lang-de nav a:nth-child(1):hover ~ span {
+  left: 355px;
+}
+body.lang-de nav a:nth-child(2):hover ~ span {
+  left: 545px;
+}
+body.lang-de nav a:nth-child(3):hover ~ span {
+  left: 750px;
+}
+body.lang-de nav a:nth-child(4):hover ~ span {
+  left: 955px;
+}
+
+/* Tylko dla języka hiszpańskiego 
+body.lang-es nav span {
+  position: absolute;
+  top: 0;
+  left: 335px;
+  width: 230px; /* Szerokość wskaźnika 
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    hsl(99, 55%, 49%),
+    hsl(71, 85%, 48%)
+  ); /* Gradient wskaźnika 
+  border-radius: 8px;
+  transition: 0.5s ease;
+  z-index: 0;
+}
+
+body.lang-es nav a:nth-child(1):hover ~ span {
+  left: 335px;
+}
+body.lang-es nav a:nth-child(2):hover ~ span {
+  left: 550px;
+}
+body.lang-es nav a:nth-child(3):hover ~ span {
+  left: 755px;
+}
+body.lang-es nav a:nth-child(4):hover ~ span {
+  left: 980px;
+}
+
+/* Tylko dla języka polskiego (domyślne) 
+body.lang-pl nav a:nth-child(1):hover ~ span,
+body.lang-pl nav a:nth-child(2):hover ~ span,
+body.lang-pl nav a:nth-child(3):hover ~ span,
+body.lang-pl nav a:nth-child(4):hover ~ span {
+  /* Twoje style dla :hover w przypadku polskiego 
+  color: yellow; /* przykładowa zmiana koloru 
+  text-decoration: underline;
+} */
+
+.language-selector {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 100;
+}
+
+.language-selector select {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+section {
+  font-size: x-large;
+  font-weight: bold;
+  color: #10b735;
+  padding: 2em 1em;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap; /* Pozwala na zawijanie obrazów na nową linię */
+  justify-content: space-around; /* Rozkłada zdjęcia równomiernie */
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
+  margin: 0.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(5, 119, 13);
+}
+
+.outside {
+  display: flex;
+  flex-wrap: wrap; /* Pozwala na zawijanie obrazów na nową linię */
+  justify-content: space-around; /* Rozkłada zdjęcia równomiernie */
+}
+
+.outside img {
+  width: 100%; /* Szerokość 100% kontenera */
+  max-width: 300px; /* Maksymalna szerokość 300px */
+  height: 250px; /* Ustalona wysokość dla wszystkich zdjęć */
+  object-fit: cover; /* Dopasowuje zdjęcia bez zniekształcania */
+  margin: 0.5em; /* Dodaje margines wokół obrazków */
+  border-radius: 10px; /* Zaokrąglenie rogów */
+  box-shadow: 0 4px 8px rgb(5, 119, 13); /* Cień wokół zdjęcia */
+}
+
+.social-media {
+  display: flex; /* Elementy w wierszu */
+  justify-content: center; /* Wyśrodkowanie w poziomie */
+  gap: 3em; /* Odstęp między elementami Facebook i Instagram */
+  margin-top: 2em; /* Dystans od treści powyżej */
+}
+
+/* Wyśrodkowanie każdego elementu Social Media */
+.social-item {
+  text-align: center; /* Wyśrodkowanie tekstu i obrazków */
+}
+
+.social-item h3 {
+  font-size: 1.5em; /* Rozmiar tekstu */
+  color: #333; /* Kolor tekstu */
+  margin-bottom: 0.5em; /* Odstęp od obrazka QR */
+}
+
+.social-item img {
+  width: 150px; /* Rozmiar obrazów QR */
+  height: auto; /* Zachowanie proporcji */
+  border-radius: 8px; /* Zaokrąglenie rogów obrazków */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtelny cień */
+}
+
+footer {
+  background: #7fe76c;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+footer p {
+  font-family: "Dancing Script", cursive; /* Ozdobna czcionka */
+  font-style: italic; /* Kursywa */
+  font-size: 1.8em; /* Możesz dostosować rozmiar czcionki */
+  text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+footer a {
+  font-size: large;
+  color: black;
+  text-decoration: none;
+}
