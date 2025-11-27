@@ -17,7 +17,5 @@ Projekt ma charakter edukacyjny i demonstracyjny (podstawy front-endu).
 - **Visual Studio** – środowisko pracy  
 
 ## Uruchomienie
-1. Pobierz repozytorium  
-2. Otwórz **index.html** w przeglądarce  
-3. Upewnij się, że pliki graficzne oraz `style.css` są w tym samym katalogu
+1. Otwórz link https://greenpal.netlify.app/ w przeglądarce internetowej.
 
